@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>acordion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        *{margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .row{
+            display:flex;
+            
+        }
+        .acardion{
+            width: 300px;
+           
+            margin: 0 auto;
+            
+        }
+        .any-acordin > h3{
+            background-color: #f5f5f5;
+                padding: 15px;
+                border-bottom: 1px solid black;
+        }
+        .any-acordin .iner{
+            width: 100%;
+            background-color: rgb(66, 66, 66);
+            padding: 15px;
+            display: none;
+        }
+        .iner > h4{
+            border-bottom: 1px solid black;
+        }
+        .any-acordin > h3:hover {
+            background-color: dodgerblue  !important;
+            cursor: pointer;
+            color: white;
+        }
+        /* .acardion .any-acordin:first-child .iner{
+            display: block;
+        } */
+        /* .acardion .any-acordin:first-child >h3{
+            background-color: dodgerblue;
+            color: white;
+        } */
+        i{
+            color: black;
+        }
+        .active > h3{
+            background-color: rgb(82, 160, 238);
+            color: white;
+        }
+        .any-acordin h3 .fa-minus{
+              display: none;
+          }
+        .active h3 .fa-minus{
+            display: block;
+        }
+        .active h3 .fa-plus{
+            display: none;
+        }
+        .setColor{
+            background-color: dodgerblue;
+            color: black
+        }
+    </style>
+</head>
+<body>
+  <div class="row">
+    <div class="acardion">
+        <!-- any acardion -->
+        <div class="any-acordin ">
+            <h3><i class="fa fa-minus"></i><i class="fa fa-plus"></i> BOX1... </h3>
+            <div class="iner">
+                <h4>this is title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, delectus!</p>
+            </div>
+        </div>
+        <div class="any-acordin">
+            <h3><i class="fa fa-minus"></i><i class="fa fa-plus"></i> BOX2...</h3>
+            <div  class="iner ">
+                <h4 >this is title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, delectus!</p>
+            </div>
+        </div>
+        <div class="any-acordin">
+            <h3><i class="fa fa-minus"></i><i class="fa fa-plus"></i> BOX3...</h3>
+            <div class="iner">
+                <h4 class="h4">this is title</h4>
+              <u>
+                <li>item1</li>
+                <li>item1</li>
+                <li>item1</li>
+                <li>item1</li>
+              </u>
+            </div>
+        </div>
+        <div class="any-acordin">
+            <h3><i class="fa fa-minus"></i><i class="fa fa-plus"></i> BOX4...</h3>
+            <div class="iner">
+                <h4>this is title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, delectus!</p>
+            </div>
+        </div>
+    </div>
+    <div class="acardion" style="display: none;">
+        <!-- any acardion -->
+        <div class="any-acordin ">
+            <h3><i class="fa fa-minus"></i><i class="fa fa-plus"></i>  this is 1 acordion</h3>
+            <div class="iner">
+                <h4>this is title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, delectus!</p>
+            </div>
+        </div>
+        <div class="any-acordin">
+            <h3><i class="fa fa-minus"></i><i class="fa fa-plus"></i> this is  2acordion</h3>
+            <div  class="iner">
+                <h4>this is title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, delectus!</p>
+            </div>
+        </div>
+        <div class="any-acordin">
+            <h3><i class="fa fa-minus"></i><i class="fa fa-plus"></i> this is 3 acordion</h3>
+            <div class="iner">
+                <h4>this is title</h4>
+              <u>
+                <li>item1</li>
+                <li>item1</li>
+                <li>item1</li>
+                <li>item1</li>
+              </u>
+            </div>
+        </div>
+        <div class="any-acordin">
+            <h3><i class="fa fa-minus"></i><i class="fa fa-plus"></i> this is 4 acordion</h3>
+            <div class="iner">
+                <h4>this is title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, delectus!</p>
+            </div>
+        </div>
+    </div>
+    
+  </div>
+
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        // $(function(){
+        //     $(".any-acordin > h3").click(function(){
+        //         $(this).parent(".any-acordin").siblings(".any-acordin").children(".iner").slideUp();
+        //         $(this).siblings(".iner").slideDown();
+
+                    
+
+        //         $(this).parent(".any-acordin").siblings(".any-acordin").children("h3").css({backgroundColor: '#f5f5f5' , color:'black'});
+
+        //         $(this).css({backgroundColor: 'dodgerblue' , color:'white'});
+                
+        //     })
+        // })
+
+
+        $(document).ready(function(){
+            $(".any-acordin ").click(function(){
+
+                $(this).children(".iner").slideToggle(function(){
+                    $(this).clearQueue();
+                });
+                $(this).toggleClass("active");
+                $(this).children(".iner").add(".setColor")
+                
+            })
+        })
+    </script>
+</body>
+</html>
